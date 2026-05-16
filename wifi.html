@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network & WiFi Solutions - SSIT</title>
+    <meta name="description" content="High-speed internal networks and mesh WiFi solutions. Eliminate dead zones and secure your business connectivity.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/wifi.html">
+    <meta property="og:title" content="Neural Networks - Connectivity by SSIT">
+    <meta property="og:description" content="Invisible connectivity and high-speed performance for modern spaces. Professional network mapping.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+    <!-- Favicon Placeholder -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lenis for Smooth Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+    <link rel="stylesheet" href="target-cursor.css">
+    <link rel="stylesheet" href="border-glow.css">
+
+    <style>
+        .service-features,
+        .solutions {
+            padding: 8rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .solutions {
+            background: transparent;
+        }
+
+        .service-features h2,
+        .solutions h2 {
+            text-align: center;
+            font-size: 3rem;
+            text-transform: lowercase;
+            margin-bottom: 4rem;
+        }
+
+        .feature-grid,
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card,
+        .solution-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover,
+        .solution-card:hover {
+            border-color: var(--primary-neon);
+            transform: translateY(-10px);
+        }
+
+        .feature-card i,
+        .solution-card i {
+            font-size: 2.5rem;
+            color: var(--primary-neon);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3,
+        .solution-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .coverage-map {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 4rem 2rem;
+            border-radius: 20px;
+            margin-top: 4rem;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .coverage-map img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 2rem;
+            filter: grayscale(1) invert(1);
+            opacity: 0.7;
+        }
+
+        .cta-section {
+            padding: 8rem 1rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body class="theme-network">
+
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="SS PowerTech Logo  for T-shart 2020-3.png" alt="SS PowerTech" style="height: 60px; filter: drop-shadow(0 0 10px rgba(0, 174, 239, 0.3));">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Index</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cctv.html">Security</a></li>
+                <li><a href="solar.html">Solar Energy</a></li>
+                <li><a href="wifi.html" class="active">Network</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-sticky-container">
+            <div class="hero-sticky">
+                <canvas id="hero-scroll-canvas"></canvas>
+                <div class="hero-content">
+                    <h1 data-aos="fade-up">Internal<br>Networks</h1>
+                    <p class="tagline" data-aos="fade-up" data-aos-delay="100">Invisible connectivity, high-speed
+                        performance for modern spaces.</p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#contact" class="cta-button">Get a Quote</a>
+                        <a href="#features" class="cta-button secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="service-features">
+            <h2 data-aos="fade-up">Network Solutions</h2>
+            <div class="feature-grid">
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="100" data-vanilla-tilt data-border-radius="20" data-glow-color="30 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-wifi"></i>
+                        <h3>High-Speed WiFi</h3>
+                        <p>Lightning-fast internet speeds for seamless connectivity</p>
+                    </div>
+                </div>
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="200" data-vanilla-tilt data-border-radius="20" data-glow-color="30 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Mesh Networks</h3>
+                        <p>Complete coverage with advanced mesh networking</p>
+                    </div>
+                </div>
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="300" data-vanilla-tilt data-border-radius="20" data-glow-color="30 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Secure Networks</h3>
+                        <p>Enterprise-grade security for your WiFi network</p>
+                    </div>
+                </div>
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="400" data-vanilla-tilt data-border-radius="20" data-glow-color="30 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <h3>Performance Monitoring</h3>
+                        <p>Real-time monitoring and optimization</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="solutions">
+            <h2 data-aos="fade-up">Comprehensive Coverage</h2>
+            <div class="solutions-grid">
+                <div class="solution-card border-glow-card" data-aos="fade-up" data-aos-delay="100" data-vanilla-tilt data-border-radius="20" data-glow-color="30 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-building"></i>
+                        <h3>Commercial WiFi</h3>
+                        <p>Enterprise-grade WiFi solutions for businesses of all sizes</p>
+                    </div>
+                </div>
+                <div class="solution-card border-glow-card" data-aos="fade-up" data-aos-delay="200" data-vanilla-tilt data-border-radius="20" data-glow-color="30 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-home"></i>
+                        <h3>Residential WiFi</h3>
+                        <p>High-performance home networking solutions</p>
+                    </div>
+                </div>
+                <div class="solution-card border-glow-card" data-aos="fade-up" data-aos-delay="300" data-vanilla-tilt data-border-radius="20" data-glow-color="30 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-industry"></i>
+                        <h3>Industrial WiFi</h3>
+                        <p>Robust WiFi networks for industrial environments</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 data-aos="fade-up">Ready for better WiFi?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Contact us today for a free consultation and quote</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="#contact" class="cta-button">Get Started</a>
+                <a href="tel:+1234567890" class="cta-button secondary">Call Now</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 data-aos="fade-up">Fix My Dead Zones</h2>
+            <div class="contact-container" data-aos="zoom-in">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone" required>
+                    <input type="text" placeholder="Location (Optional)">
+                    <select required class="service-select">
+                        <option value="" disabled selected>Estimated Area Size</option>
+                        <option value="under-1000">Under 1,000 sq. ft.</option>
+                        <option value="1000-3000">1,000 - 3,000 sq. ft.</option>
+                        <option value="3000-7000">3,000 - 7,000 sq. ft.</option>
+                        <option value="7000+">7,000+ sq. ft. / Multi-unit</option>
+                    </select>
+                    <select required class="service-select">
+                        <option value="" disabled selected>Number of Floors</option>
+                        <option value="1">Single Floor</option>
+                        <option value="2">2 Floors</option>
+                        <option value="3+">3+ Floors</option>
+                    </select>
+                    <textarea placeholder="Describe your current Wi-Fi issues or dead zones (Optional)"></textarea>
+                    <input type="text" name="_honeypot" class="honeypot-field" style="display:none" tabindex="-1" autocomplete="off">
+                    <button type="submit" class="submit-btn">Fix My Dead Zones →</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SSIT</h3>
+                <p>Your trusted partner in security and technology solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="cctv.html">CCTV Services</a></li>
+                    <li><a href="solar.html">Solar Solutions</a></li>
+                    <li><a href="wifi.html">WiFi Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@ssit.com</p>
+                <p><i class="fas fa-location-dot"></i> 123 Business Street, City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SSIT. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP for Hero Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- AOS for Scroll Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Vanilla Tilt for 3D Hover Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.js"></script>
+    <script src="border-glow.js"></script>
+    <script src="target-cursor.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

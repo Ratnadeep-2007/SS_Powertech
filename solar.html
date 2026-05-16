@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Energy Solutions - SSIT</title>
+    <meta name="description" content="Premium solar panel installations and smart energy monitoring. Reduce your electricity bills with sustainable solar power.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/solar.html">
+    <meta property="og:title" content="Solar Synthesis - Clean Energy by SSIT">
+    <meta property="og:description" content="Sustainable energy integration that powers your future. Request a solar quote today.">
+    <meta property="og:image" content="https://yourdomain.com/og-image.jpg">
+
+    <!-- Favicon Placeholder -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Lenis for Smooth Scroll -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+    <link rel="stylesheet" href="target-cursor.css">
+    <link rel="stylesheet" href="border-glow.css">
+
+    <style>
+        .service-features,
+        .benefits {
+            padding: 8rem 1rem;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .benefits {
+            background: transparent;
+        }
+
+        .service-features h2,
+        .benefits h2 {
+            text-align: center;
+            font-size: 3rem;
+            text-transform: lowercase;
+            margin-bottom: 4rem;
+        }
+
+        .feature-grid,
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card,
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover,
+        .benefit-card:hover {
+            border-color: var(--accent-neon);
+            transform: translateY(-10px);
+        }
+
+        .feature-card i,
+        .benefit-card i {
+            font-size: 2.5rem;
+            color: var(--accent-neon);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3,
+        .benefit-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            padding: 8rem 1rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body class="theme-energy">
+
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <img src="SS PowerTech Logo  for T-shart 2020-3.png" alt="SS PowerTech" style="height: 60px; filter: drop-shadow(0 0 10px rgba(0, 174, 239, 0.3));">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Index</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="cctv.html">Security</a></li>
+                <li><a href="solar.html" class="active">Solar Energy</a></li>
+                <li><a href="wifi.html">Network</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-sticky-container">
+            <div class="hero-sticky">
+                <canvas id="hero-scroll-canvas"></canvas>
+                <div class="hero-content">
+                    <h1 data-aos="fade-up">Solar <br>Synthesis</h1>
+                    <p class="tagline" data-aos="fade-up" data-aos-delay="100">Clean energy integration that powers your
+                        future, sustainably.</p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#contact" class="cta-button">Get a Quote</a>
+                        <a href="#features" class="cta-button secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="service-features">
+            <h2 data-aos="fade-up">Energy Solutions</h2>
+            <div class="feature-grid">
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="100" data-vanilla-tilt data-border-radius="20" data-glow-color="60 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-solar-panel"></i>
+                        <h3>Premium Panels</h3>
+                        <p>High-efficiency solar panels for maximum energy production</p>
+                    </div>
+                </div>
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="200" data-vanilla-tilt data-border-radius="20" data-glow-color="60 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Smart Inverters</h3>
+                        <p>Advanced inverters for optimal power conversion</p>
+                    </div>
+                </div>
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="300" data-vanilla-tilt data-border-radius="20" data-glow-color="60 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Energy Monitoring</h3>
+                        <p>Real-time monitoring of your solar system's performance</p>
+                    </div>
+                </div>
+                <div class="feature-card border-glow-card" data-aos="fade-up" data-aos-delay="400" data-vanilla-tilt data-border-radius="20" data-glow-color="60 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-tools"></i>
+                        <h3>Expert Installation</h3>
+                        <p>Professional installation by certified technicians</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+            <h2 data-aos="fade-up">Sustainable Benefits</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card border-glow-card" data-aos="fade-up" data-aos-delay="100" data-vanilla-tilt data-border-radius="20" data-glow-color="60 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Cost Savings</h3>
+                        <p>Reduce your electricity bills and protect against rising energy costs</p>
+                    </div>
+                </div>
+                <div class="benefit-card border-glow-card" data-aos="fade-up" data-aos-delay="200" data-vanilla-tilt data-border-radius="20" data-glow-color="60 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Eco-Friendly</h3>
+                        <p>Reduce your carbon footprint and help protect the environment</p>
+                    </div>
+                </div>
+                <div class="benefit-card border-glow-card" data-aos="fade-up" data-aos-delay="300" data-vanilla-tilt data-border-radius="20" data-glow-color="60 100 50">
+                    <span class="edge-light"></span>
+                    <div class="border-glow-inner">
+                        <i class="fas fa-home"></i>
+                        <h3>Increased Property Value</h3>
+                        <p>Solar installations can increase your property's market value</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2 data-aos="fade-up">Ready to go Solar?</h2>
+            <p data-aos="fade-up" data-aos-delay="100">Contact us today for a free consultation and quote</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="200">
+                <a href="#contact" class="cta-button">Get Started</a>
+                <a href="tel:+1234567890" class="cta-button secondary">Call Now</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 data-aos="fade-up">Get Solar Quote</h2>
+            <div class="contact-container" data-aos="zoom-in">
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone" required>
+                    <input type="text" placeholder="Location (Optional)">
+                    <select required class="solar-select">
+                        <option value="" disabled selected>Avg. Monthly Bill (₹)</option>
+                        <option value="500-2000">₹500 - ₹2,000</option>
+                        <option value="2000-5000">₹2,000 - ₹5,000</option>
+                        <option value="5000-10000">₹5,000 - ₹10,000</option>
+                        <option value="10000+">Above ₹10,000</option>
+                    </select>
+                    <textarea placeholder="Tell us about your roof area or specific requirements (Optional)"></textarea>
+                    <input type="text" name="_honeypot" class="honeypot-field" style="display:none" tabindex="-1" autocomplete="off">
+                    <button type="submit" class="submit-btn">Get My Solar Quote →</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>SSIT</h3>
+                <p>Your trusted partner in security and technology solutions.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="cctv.html">CCTV Services</a></li>
+                    <li><a href="solar.html">Solar Solutions</a></li>
+                    <li><a href="wifi.html">WiFi Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> info@ssit.com</p>
+                <p><i class="fas fa-location-dot"></i> 123 Business Street, City</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SSIT. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- GSAP for Hero Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- AOS for Scroll Animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Vanilla Tilt for 3D Hover Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.js"></script>
+    <script src="border-glow.js"></script>
+    <script src="target-cursor.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+.env
+node_modules/
+.gemini/
+*.zip
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+phpmailer/composer.lock
