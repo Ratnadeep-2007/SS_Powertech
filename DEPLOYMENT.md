@@ -1,4 +1,4 @@
-# Deployment Checklist for SSIT Website
+# Deployment Checklist for S S PowerTech Website
 
 ## 1. Hosting Requirements
 - Ensure your host supports **PHP 7.4 or 8.x**.

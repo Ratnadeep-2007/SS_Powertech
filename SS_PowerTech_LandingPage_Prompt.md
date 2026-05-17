@@ -1,10 +1,10 @@
-# SS PowerTech — Landing Page Design & Development Prompt for Gemini
+# S S PowerTech — Landing Page Design & Development Prompt for Gemini
 
 ---
 
 ## 🎯 Project Overview
 
-Build a **stunning, high-converting single-page landing website** for **SS PowerTech**, a modern tech-services company offering:
+Build a **stunning, high-converting single-page landing website** for **S S PowerTech**, a modern tech-services company offering:
 
 - 📷 **Camera Installation** (CCTV & Security Surveillance)
 - ☀️ **Solar Installation** (Residential & Commercial)
@@ -43,7 +43,7 @@ Build the page in this exact order:
 
 ### 1. 🔝 Navigation Bar (Sticky)
 
-- Logo left: **SS PowerTech** with a lightning bolt icon ⚡
+- Logo left: **S S PowerTech** with a lightning bolt icon ⚡
 - Nav links center: Home | Services | Why Us | Testimonials | Contact
 - CTA button right: **"Get Free Quote"** — glowing outlined button
 - Background: fully transparent, becomes dark blur (`backdrop-filter: blur`) on scroll
@@ -64,7 +64,7 @@ CONNECTED.
 Each word on its own line. Each word animates in with staggered fade+slide from bottom (0.2s delay each).
 
 **Sub-headline**:
-> "SS PowerTech brings cutting-edge security cameras, solar energy systems, and seamless Wi-Fi networks to homes and businesses across the region."
+> "S S PowerTech brings cutting-edge security cameras, solar energy systems, and seamless Wi-Fi networks to homes and businesses across the region."
 
 **Two CTAs**:
 - Primary: `Explore Services` → scrolls to services section (filled, glowing button)
@@ -153,7 +153,7 @@ Background: subtle animated gradient sweep (left to right shimmer).
 
 ---
 
-### 5. 💡 Why Choose SS PowerTech — "The SS Advantage"
+### 5. 💡 Why Choose S S PowerTech — "The SS Advantage"
 
 Section heading: **"Why Hundreds Trust Us"**
 
@@ -228,7 +228,7 @@ Section heading: **"Real People. Real Results."**
 
 Sample testimonials to include:
 ```
-"SS PowerTech installed 16 cameras in our factory. Clean work, perfect setup. 
+"S S PowerTech installed 16 cameras in our factory. Clean work, perfect setup. 
 No issues in 2 years!" — Ramesh K., Factory Owner
 
 "Our solar panels saved us ₹6,000 last month itself. Installation was 
@@ -291,7 +291,7 @@ Add: WhatsApp floating button (bottom-right corner) with pulse animation — `Ch
 Dark footer, three columns:
 
 **Column 1 — Brand**
-- SS PowerTech logo + tagline: *"Secure. Powered. Connected."*
+- S S PowerTech logo + tagline: *"Secure. Powered. Connected."*
 - One-liner company description
 - Social icons: Facebook | Instagram | YouTube | LinkedIn (circle icon buttons)
 
@@ -305,7 +305,7 @@ Dark footer, three columns:
 - Free Site Survey
 - Support & Maintenance
 
-**Bottom bar**: `© 2025 SS PowerTech. All rights reserved.` | `Made with ⚡ for a smarter future`
+**Bottom bar**: `© 2025 S S PowerTech. All rights reserved.` | `Made with ⚡ for a smarter future`
 
 ---
 
@@ -374,9 +374,9 @@ Place CTA buttons in: Hero, Services section (each card), Solar Calculator, and 
 - Use **₹ (Indian Rupee)** for all pricing references
 - Ensure **fast loading** — minimize heavy assets
 - Add **meta tags** for SEO: title, description, OG tags
-- Page title: `SS PowerTech | Security Cameras, Solar & Wi-Fi Solutions`
-- Meta description: `SS PowerTech offers professional camera installation, solar panel setup, and interior Wi-Fi solutions. Get your free site survey today!`
+- Page title: `S S PowerTech | Security Cameras, Solar & Wi-Fi Solutions`
+- Meta description: `S S PowerTech offers professional camera installation, solar panel setup, and interior Wi-Fi solutions. Get your free site survey today!`
 
 ---
 
-*Prompt crafted for SS PowerTech — Built to Impress, Designed to Convert.*
+*Prompt crafted for S S PowerTech — Built to Impress, Designed to Convert.*

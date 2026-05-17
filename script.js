@@ -83,22 +83,51 @@ document.addEventListener('DOMContentLoaded', () => {
         ease: "back.out(1.7)"
     }, "-=0.8");
 
-    // 6. Initialize Vanilla Tilt for Service Cards
-    VanillaTilt.init(document.querySelectorAll(".service-card"), {
-        max: 10,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.1,
-    });
+    // 6. Initialize Vanilla Tilt for Service Cards (Disable on touch)
+    if (!('ontouchstart' in window)) {
+        VanillaTilt.init(document.querySelectorAll(".service-card, .feature-card, .benefit-card, .solution-card, .mission-card, .vision-card, .team-member, .value-card"), {
+            max: 10,
+            speed: 400,
+            glare: true,
+            "max-glare": 0.1,
+        });
+    }
 
-    // 7. Sticky Header Logic
+    // 7. Sticky Header & Mobile Menu Logic
     const header = document.getElementById('header');
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const navLinksItems = document.querySelectorAll('.nav-links li a');
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
+    });
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            
+            // Prevent scrolling when menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Close menu when a link is clicked
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.style.overflow = '';
+        });
     });
 
     // 8. Form Submission Logic
@@ -116,10 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const toast = document.createElement('div');
         toast.className = `toast ${type === 'error' ? 'error' : ''}`;
-        toast.innerHTML = `
-            <span>${message}</span>
-            <i class="fas fa-times toast-close"></i>
-        `;
+        
+        const span = document.createElement('span');
+        span.textContent = message;
+        toast.appendChild(span);
+
+        const closeBtn = document.createElement('i');
+        closeBtn.className = 'fas fa-times toast-close';
+        toast.appendChild(closeBtn);
 
         container.appendChild(toast);
 
@@ -200,8 +233,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: message
             };
 
+            // 1. Attempt Supabase Logging (Non-blocking)
             try {
-                // 1. Store in Supabase using native Fetch
                 const supabaseResponse = await fetch(`${supabaseUrl}/rest/v1/inquiries`, {
                     method: 'POST',
                     headers: {
@@ -214,10 +247,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (!supabaseResponse.ok) {
-                    const errorData = await supabaseResponse.json();
-                    throw new Error(errorData.message || 'Supabase insertion failed');
+                    console.warn('Supabase logging failed, continuing with email...');
                 }
+            } catch (supabaseError) {
+                console.warn('Supabase connection error:', supabaseError.message);
+                // We don't throw here so the email still attempts to send
+            }
 
+            try {
                 // 2. Send Instant Email via PHP
                 const response = await fetch('mail.php', {
                     method: 'POST',

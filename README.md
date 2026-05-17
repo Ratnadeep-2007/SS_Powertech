@@ -1,6 +1,6 @@
-# SSIT - Security and Energy Solutions
+# S S PowerTech - Security and Energy Solutions
 
-SSIT is a modern web application for a technology solutions provider specializing in CCTV security, Solar energy, and Network infrastructure.
+S S PowerTech is a modern web application for a technology solutions provider specializing in CCTV security, Solar energy, and Network infrastructure.
 
 ## Features
 - **Modern Aesthetic:** High-impact visuals with fluid cursor effects and border-glow animations.

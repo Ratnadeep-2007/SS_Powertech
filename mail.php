@@ -6,6 +6,17 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
+// Simple .env loader
+if (file_exists(__DIR__ . '/.env')) {
+    $lines = file(__DIR__ . '/.env', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    foreach ($lines as $line) {
+        if (strpos(trim($line), '#') === 0) continue;
+        list($name, $value) = explode('=', $line, 2);
+        $_ENV[trim($name)] = trim($value);
+        putenv(trim($name) . '=' . trim($value));
+    }
+}
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
@@ -26,16 +37,23 @@ try {
     // --- SERVER SETTINGS ---
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;         // Uncomment for detailed debug info
     $mail->isSMTP();                                  // Send using SMTP
-    $mail->Host = 'smtp.gmail.com';             // Set the SMTP server to send through
+    $mail->Host = getenv('SMTP_HOST') ?: 'smtp.gmail.com';             // Set the SMTP server to send through
     $mail->SMTPAuth = true;                         // Enable SMTP authentication
-    $mail->Username = 'ratnadeepp2007@gmail.com';   // Your Gmail address
-    $mail->Password = 'cwrj zseq vvzw ncam'; // Your 16-character Gmail App Password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;
+    $mail->Username = getenv('SMTP_USER');   // Your Gmail address
+    $mail->Password = getenv('SMTP_PASS'); // Your 16-character Gmail App Password
+    
+    $encryption = strtolower(getenv('SMTP_ENCRYPTION') ?: 'tls');
+    if ($encryption === 'ssl') {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    } else {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    }
+    
+    $mail->Port = getenv('SMTP_PORT') ?: 587;
 
     // --- RECIPIENTS ---
-    $mail->setFrom('ratnadeepp2007@gmail.com', 'Website Contact Form');
-    $mail->addAddress('ratnadeepp2007@gmail.com');    // Add recipient
+    $mail->setFrom(getenv('SMTP_USER'), 'Website Contact Form');
+    $mail->addAddress(getenv('CONTACT_RECEIVER') ?: 'vijay_patil1980@yahoo.com');    // Add recipient
 
     // Reply-To user who filled the form
     if (!empty($data['email'])) {
@@ -56,7 +74,7 @@ try {
     $detailsHtml = '';
     if (!empty($data['details'])) {
         foreach ($data['details'] as $key => $value) {
-            $detailsHtml .= "<tr><td><strong>$key:</strong></td><td>" . htmlspecialchars($value) . "</td></tr>";
+            $detailsHtml .= "<tr><td><strong>" . htmlspecialchars($key) . ":</strong></td><td>" . htmlspecialchars($value) . "</td></tr>";
         }
     }
 
