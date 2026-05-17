@@ -62,6 +62,8 @@ try {
 
     // --- CONTENT ---
     $mail->isHTML(true);                              // Set email format to HTML
+    $mail->CharSet = 'UTF-8';                         // Ensure proper character encoding
+    $mail->Hostname = getenv('SMTP_HOST') ?: 'smtp.gmail.com'; 
 
     // Sanitize data
     $name = htmlspecialchars($data['name'] ?? 'N/A');
@@ -69,30 +71,45 @@ try {
     $phone = htmlspecialchars($data['phone'] ?? 'N/A');
     $service = htmlspecialchars($data['service_type'] ?? 'General Inquiry');
     $message = nl2br(htmlspecialchars($data['message'] ?? 'No message provided'));
+    $rawMessage = strip_tags($data['message'] ?? 'No message provided');
 
-    // Construct Details HTML
+    // Construct Details HTML & Plain Text
     $detailsHtml = '';
+    $detailsPlain = '';
     if (!empty($data['details'])) {
         foreach ($data['details'] as $key => $value) {
-            $detailsHtml .= "<tr><td><strong>" . htmlspecialchars($key) . ":</strong></td><td>" . htmlspecialchars($value) . "</td></tr>";
+            $safeKey = htmlspecialchars($key);
+            $safeVal = htmlspecialchars($value);
+            $detailsHtml .= "<tr><td><strong>$safeKey:</strong></td><td>$safeVal</td></tr>";
+            $detailsPlain .= "- $key: $value\n";
         }
     }
 
-    $mail->Subject = "New Website Inquiry from $name";
+    $mail->Subject = "Contact Form: $name ($service)";
     $mail->Body = "
     <div style='font-family: Arial, sans-serif; max-width: 600px; border: 1px solid #eee; padding: 20px;'>
-        <h2 style='color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 10px;'>New Lead from Website</h2>
+        <h2 style='color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 10px;'>New Inquiry from Website</h2>
         <table border='0' cellpadding='10' style='width: 100%; border-collapse: collapse;'>
             <tr style='background: #f9f9f9;'><td><strong>Name:</strong></td><td>$name</td></tr>
             <tr><td><strong>Email:</strong></td><td>$email</td></tr>
             <tr style='background: #f9f9f9;'><td><strong>Phone:</strong></td><td>$phone</td></tr>
-            <tr><td><strong>Service Category:</strong></td><td>$service</td></tr>
+            <tr><td><strong>Service:</strong></td><td>$service</td></tr>
             $detailsHtml
         </table>
         <div style='margin-top: 20px; padding: 15px; background: #f0f7ff; border-radius: 5px;'>
             <strong>Message:</strong><br>$message
         </div>
+        <hr style='border: 0; border-top: 1px solid #eee; margin: 20px 0;'>
+        <p style='font-size: 12px; color: #999;'>This email was sent from your website contact form.</p>
     </div>";
+
+    $mail->AltBody = "NEW WEBSITE INQUIRY\n\n" .
+                     "Name: $name\n" .
+                     "Email: $email\n" .
+                     "Phone: $phone\n" .
+                     "Service: $service\n" .
+                     $detailsPlain . "\n" .
+                     "Message:\n$rawMessage";
 
     $mail->send();
     echo json_encode(['status' => 'success', 'message' => 'Transmission Successful. Our technicians will contact you shortly.']);
